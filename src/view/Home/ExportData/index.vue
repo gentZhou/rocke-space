@@ -218,7 +218,7 @@ export default {
   .details {
     background-color: white;
     margin-top: 20px;
-    box-shadow: 0px 0px 8px 8px #eee;
+    box-shadow: 5px 5px 10px #eee;
     padding: 30px;
     border-radius: 8px;
     min-height: 680px;
@@ -246,7 +246,7 @@ export default {
       background-color: white;
       margin-top: 30px;
       border-radius: 8px;
-      box-shadow: 0px 0px 5px 5px #eee;
+      box-shadow: 5px 5px 10px #eee;
       border: 1px solid #eeeeee;
       padding: 30px 25px;
     }

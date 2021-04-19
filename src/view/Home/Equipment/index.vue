@@ -45,15 +45,20 @@
         >
         </el-option>
       </el-select>
-      <el-input placeholder="请输入设备SN/关键字" />
+      <el-input placeholder="请输入设备SN/关键字" v-model="search"/>
       <el-button icon="iconfont iconshuaxin"></el-button>
     </div>
     <div class="table-container">
       <el-table
         class="table-data"
-        :data="data.slice((currentPage - 1) * pagesize, currentPage * pagesize)"
+        :data="searchData.slice((currentPage - 1) * pagesize, currentPage * pagesize)"
         header-align="center"
       >
+        <!-- <el-table
+        class="table-data"
+        :data="data.filter(data => !search || data.model_type_name.toLowerCase().includes(search.toLowerCase()))"
+        header-align="center"
+      > -->
         <el-table-column type="index" label="编号" width="180" align="center">
         </el-table-column>
         <el-table-column prop="name" label="设备类型" align="center">
@@ -102,6 +107,7 @@
         :current-page="currentPage"
         :page-sizes="[10, 20, 50, 100]"
         :page-size="pagesize"
+        pager-count="4"
         layout="total, prev, pager, next,slot"
         :total="data.length"
       >
@@ -382,9 +388,23 @@ export default {
       },
       dialogFormVisible: false,
       formLabelWidth: "150px",
+      search:''
     };
   },
-  computed: {},
+  computed: {
+    searchData: function() {
+	      var search = this.search;
+	      //此处的etquestions均为data, 这个etquestions.content.title是根据自己的需要写,一般写data
+	      if (search) {
+	        return this.data.filter(item => {
+	          if (item.amount1.indexOf(search)!= -1) {
+	            return item;
+	          }
+	        });
+	      }
+	      return this.data;
+    }
+  },
   created() {},
   mounted() {},
   watch: {},
@@ -404,7 +424,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-@shadow: 0px 0px 8px 8px #eee;
+@shadow: 5px 5px 10px #eee;
 @logo: #0268fc;
 .equipment-container {
   .top-option > * {

@@ -316,6 +316,7 @@ export default {
     margin-top: 20px;
     box-shadow: 5px 5px 10px #eee;
     background-color: white;
+    border-radius: 2px;
     h4 {
       padding: 22px 0 0 33px;
       font-size: 16px;

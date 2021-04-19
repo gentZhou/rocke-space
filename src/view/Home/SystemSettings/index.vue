@@ -19,9 +19,9 @@
       <el-tab-pane
         label="个人信息设置"
         name="/home/systemsettings/informaticasettings"
-      ></el-tab-pane>
+      >{{a}}</el-tab-pane>
     </el-tabs>
-    <router-view></router-view>
+    <router-view> </router-view>
   </div>
 </template>
 
@@ -30,7 +30,9 @@ export default {
   name: "SystemSettings",
   props: {},
   data() {
-    return {};
+    return {
+      a:'hahh'
+    };
   },
   computed: {
     activeMenu: {
@@ -64,7 +66,7 @@ export default {
 .systemsettings-container {
   background-color: white;
   border-radius: 8px;
-  box-shadow: 0 0px 8px 8px #eee;
+  box-shadow: 5px 5px 10px #eee;
   padding: 20px 40px;
   min-height: 760px;
   /deep/.el-tabs {

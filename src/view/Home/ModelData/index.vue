@@ -225,7 +225,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-@shadow: 0 0px 8px 8px #eee;
+@shadow: 5px 5px 10px #eee;
 @logo: #1268fb;
 
 .ModelData-container {
@@ -238,6 +238,7 @@ export default {
       box-shadow: @shadow;
       display: inline-block;
       height: 100%;
+      border-radius:2px;
     }
     .data1 {
       width: calc(100% - 1200px);
@@ -379,9 +380,11 @@ export default {
     }
   }
   .table-container {
+    box-shadow: 5px 5px 10px #eee;
     background-color: white;
     padding-top: 26px;
     overflow: hidden;
+    border-radius:2px;
   }
 }
 </style>

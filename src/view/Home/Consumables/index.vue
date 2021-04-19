@@ -59,6 +59,7 @@
         :current-page="currentPage"
         :page-sizes="[10, 20, 50, 100]"
         :page-size="pagesize"
+        :pager-count="4"
         layout="total, prev, pager, next,slot"
         :total="data.length"
       >
@@ -236,6 +237,7 @@ export default {
     background-color: white;
     margin-top: 26px;
     padding-top: 26px;
+    border-radius:2px;
     box-shadow: 0 0 8px 8px #eee;
     overflow: hidden;
     .el-table {

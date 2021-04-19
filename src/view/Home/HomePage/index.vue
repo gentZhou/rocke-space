@@ -84,7 +84,7 @@ export default {
     .item {
       width: calc(33.33% - 14px);
       height: 100%;
-      box-shadow: 0 0px 8px 8px #eee;
+      box-shadow: 5px 5px 10px #eee;
       border-radius: 2px;
       float: left;
       box-sizing: border-box;

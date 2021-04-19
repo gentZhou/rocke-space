@@ -321,6 +321,7 @@
             :current-page="currentPage"
             :page-sizes="[10, 20, 50, 100]"
             :page-size="pagesize"
+            :pager-count="5"
             layout="total, prev, pager, next,slot"
             :total="data.length"
           >
@@ -1415,6 +1416,7 @@ export default {
       background-color: white;
       box-shadow: 5px 5px 10px #eee;
       margin-left: 20px;
+      border-radius: 2px;
       .iconbangzhu1 {
         color: #bbb;
         padding-left: 4px;
@@ -1527,6 +1529,7 @@ export default {
       margin-top: 25px;
     }
     .chart {
+      border-radius:2px;
       height: 480px;
       background-color: white;
       box-shadow: 5px 5px 10px #eee;
@@ -1578,6 +1581,7 @@ export default {
       height: 700px;
       margin-top: 25px;
       .bottomItem {
+        border-radius:2px;
         box-shadow: 5px 5px 10px #eee;
         h4 {
           margin: 38px 0 0 30px;

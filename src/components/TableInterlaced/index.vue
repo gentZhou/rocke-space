@@ -22,6 +22,7 @@
       :current-page="currentPage"
       :page-sizes="[10, 20, 50, 100]"
       :page-size="pagesize"
+      :pager-count="4"
       layout="total, prev, pager, next,slot"
       :total="data.length"
     >
