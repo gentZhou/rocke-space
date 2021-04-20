@@ -127,7 +127,7 @@
       </div>
     </div>
     <div class="echarts-container">
-      <ul class="echarts-nav">
+      <!-- <ul class="echarts-nav">
         <li
           class="item"
           v-for="(chartItem, index) in chartList"
@@ -137,7 +137,7 @@
         >
           {{ chartItem }}
         </li>
-      </ul>
+      </ul> -->
 
       <div class="chart" ref="chart1Position">
         <h4>
@@ -1503,6 +1503,7 @@ export default {
     }
   }
   .echarts-container {
+    padding-top:20px;
     .echarts-nav {
       margin: 38px 0 30px 0;
       height: 35px;

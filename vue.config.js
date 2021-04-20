@@ -1,7 +1,7 @@
 
 const px2rem = require("postcss-px2rem")
 module.exports = {
-
+    productionSourceMap: false,
     lintOnSave: false,
     
     css: {
