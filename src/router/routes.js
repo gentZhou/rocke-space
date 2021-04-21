@@ -80,9 +80,7 @@ export default [
         path: "exportdata",
         component: () =>
           import(/* webpackChunkName:"ExportData" */ "@/view/Home/ExportData"),
-        meta: {
-          title: "机型数据",
-        },
+       
         children: [
           // 模板详情
           {
@@ -91,6 +89,9 @@ export default [
               import(
                 /* webpackChunkName:"TemplateDeatils" */ "@/view/Home/ExportData/TemplateDeatils"
               ),
+              meta: {
+                title: "模板详情",
+              },
           },
           // 设备膜码详情
           {
@@ -99,6 +100,9 @@ export default [
               import(
                 /* webpackChunkName:"EquipmentDetails" */ "@/view/Home/ExportData/EquipmentDetails"
               ),
+              meta: {
+                title: "设备膜码详情",
+              },
           },
           // 切膜型号
           {
@@ -107,6 +111,9 @@ export default [
               import(
                 /* webpackChunkName:"CuttingModel" */ "@/view/Home/ExportData/CuttingModel"
               ),
+              meta: {
+                title: "切膜型号排名",
+              },
           },
           // 设备切膜统计
           {
@@ -115,6 +122,9 @@ export default [
               import(
                 /* webpackChunkName:"CuttingStatistics" */ "@/view/Home/ExportData/CuttingStatistics"
               ),
+              meta: {
+                title: "设备切膜统计",
+              },
           },
           {
             path: "/home/exportdata",
@@ -129,9 +139,6 @@ export default [
           import(
             /* webpackChunkName:"SystemSettings" */ "@/view/Home/SystemSettings"
           ),
-        meta: {
-          title: "机型数据",
-        },
         children: [
           {
             path: "datasettings",
@@ -139,6 +146,9 @@ export default [
               import(
                 /* webpackChunkName:"DataSettings" */ "@/view/Home/SystemSettings/DataSettings"
               ),
+              meta: {
+                title: "数据设置",
+              },
           },
           {
             path: "informaticasettings",
@@ -146,6 +156,9 @@ export default [
               import(
                 /* webpackChunkName:"InformaticaSettings" */ "@/view/Home/SystemSettings/InformaticaSettings"
               ),
+              meta: {
+                title: "个人信息设置",
+              },
           },
           {
             path: "/home/systemsettings",
@@ -153,7 +166,7 @@ export default [
           },
         ],
       },
-      // 服务指南
+      // 反馈
       {
         path: "serviceinformation",
         component: () =>
@@ -162,6 +175,15 @@ export default [
           ),
         meta: {
           title: "机型数据",
+        },
+      },
+      // 服务指南
+      {
+        path: "feedback",
+        component: () =>
+          import(/* webpackChunkName:"Feedback" */ "@/view/Home/Feedback"),
+        meta: {
+          title: "反馈",
         },
       },
 

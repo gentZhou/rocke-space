@@ -117,7 +117,7 @@ export default {
           label: "English",
         },
       ],
-      value: "中文",
+      value: "",
       form: {
         name: "",
         region: "",
@@ -153,6 +153,7 @@ export default {
     },
   },
   mounted() {
+    // this.value=localStorage.lang;
     this.options.forEach((item) => {
       if (item.value == localStorage.lang) {
         this.value = item.label;

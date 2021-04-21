@@ -46,6 +46,10 @@
         <i class="iconfont iconshezhi"></i>
         <span slot="title">系统设置</span>
       </el-menu-item>
+      <el-menu-item index="/home/feedback">
+        <i class="iconfont iconbangzhu"></i>
+        <span slot="title">反馈</span>
+      </el-menu-item>
       <!-- <el-menu-item @click="isCollapse = false" index="/home/serviceinformation">
         <i class="iconfont iconbangzhu"></i>
         <span slot="title">服务指南</span>
