@@ -24,7 +24,7 @@ export default [
           title: "设备管理",
         },
       },
-      // 谁被详情
+      // 设备详情
       {
         path: "equipment/details",
         component: () =>
@@ -80,7 +80,7 @@ export default [
         path: "exportdata",
         component: () =>
           import(/* webpackChunkName:"ExportData" */ "@/view/Home/ExportData"),
-       
+
         children: [
           // 模板详情
           {
@@ -89,9 +89,9 @@ export default [
               import(
                 /* webpackChunkName:"TemplateDeatils" */ "@/view/Home/ExportData/TemplateDeatils"
               ),
-              meta: {
-                title: "模板详情",
-              },
+            meta: {
+              title: "模板详情",
+            },
           },
           // 设备膜码详情
           {
@@ -100,9 +100,9 @@ export default [
               import(
                 /* webpackChunkName:"EquipmentDetails" */ "@/view/Home/ExportData/EquipmentDetails"
               ),
-              meta: {
-                title: "设备膜码详情",
-              },
+            meta: {
+              title: "设备膜码详情",
+            },
           },
           // 切膜型号
           {
@@ -111,9 +111,9 @@ export default [
               import(
                 /* webpackChunkName:"CuttingModel" */ "@/view/Home/ExportData/CuttingModel"
               ),
-              meta: {
-                title: "切膜型号排名",
-              },
+            meta: {
+              title: "切膜型号排名",
+            },
           },
           // 设备切膜统计
           {
@@ -122,9 +122,9 @@ export default [
               import(
                 /* webpackChunkName:"CuttingStatistics" */ "@/view/Home/ExportData/CuttingStatistics"
               ),
-              meta: {
-                title: "设备切膜统计",
-              },
+            meta: {
+              title: "设备切膜统计",
+            },
           },
           {
             path: "/home/exportdata",
@@ -146,9 +146,9 @@ export default [
               import(
                 /* webpackChunkName:"DataSettings" */ "@/view/Home/SystemSettings/DataSettings"
               ),
-              meta: {
-                title: "数据设置",
-              },
+            meta: {
+              title: "数据设置",
+            },
           },
           {
             path: "informaticasettings",
@@ -156,9 +156,9 @@ export default [
               import(
                 /* webpackChunkName:"InformaticaSettings" */ "@/view/Home/SystemSettings/InformaticaSettings"
               ),
-              meta: {
-                title: "个人信息设置",
-              },
+            meta: {
+              title: "个人信息设置",
+            },
           },
           {
             path: "/home/systemsettings",
@@ -166,27 +166,66 @@ export default [
           },
         ],
       },
-      // 反馈
+      // 服务指南
       {
         path: "serviceinformation",
         component: () =>
           import(
-            /* webpackChunkName:"ServiceInformation" */ "@/view/Home/ServiceInformation"
+            /* webpackChunkName:"Serviceinformation" */ "@/view/Home/ServiceInformation"
           ),
         meta: {
-          title: "机型数据",
+          title: "服务指南",
         },
       },
-      // 服务指南
+      // 问题反馈
       {
-        path: "feedback",
+        path: "serviceinformation/servicesupport",
         component: () =>
-          import(/* webpackChunkName:"Feedback" */ "@/view/Home/Feedback"),
+          import(
+            /* webpackChunkName:"Serviceinformation" */ "@/view/Home/ServiceInformation/ServiceSupport"
+          ),
         meta: {
-          title: "反馈",
+          title: "问题反馈",
+        },
+        children:[
+          {
+            path: "allquestions",
+            component: () =>
+              import(
+                /* webpackChunkName:"AllQuestions" */ "@/view/Home/ServiceInformation/ServiceSupport/AllQuestions"
+              ),
+          },
+          {
+            path: "waitingforanswers",
+            component: () =>
+              import(
+                /* webpackChunkName:"WaitingForAnswers" */ "@/view/Home/ServiceInformation/ServiceSupport/WaitingForAnswers"
+              ),
+          },
+          {
+            path: "answered",
+            component: () =>
+              import(
+                /* webpackChunkName:"Answered" */ "@/view/Home/ServiceInformation/ServiceSupport/Answered"
+              ),
+          },
+          {
+            path:'/home/serviceinformation/servicesupport',
+            redirect:'/home/serviceinformation/servicesupport/allquestions'
+          }
+        ]
+      },
+      // 提问
+      {
+        path: "serviceinformation/questions",
+        component: () =>
+          import(
+            /* webpackChunkName:"Questions" */ "@/view/Home/ServiceInformation/Questions"
+          ),
+        meta: {
+          title: "提问",
         },
       },
-
       {
         path: "/home",
         redirect: "/home/index",

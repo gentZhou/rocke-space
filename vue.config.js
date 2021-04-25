@@ -14,18 +14,23 @@ module.exports = {
         }
     },
     devServer: {
-      open:true
+      open:true,
         // proxy: "http://segmenth50422.utools.club",
-        // proxy: {
+        proxy: {
         //   "/api": {
-        //     target: "http://flash.weather.com.cn/wmaps/xml/shenzhen.xml",
+        //     // target: "http://flash.weather.com.cn/wmaps/xml/shenzhen.xml",
+        //     target:"localhost:9527",
         //     ws: true,
         //     changeOrigin: true,
         //     pathRewrite: {
         //       "^/api": ""
         //     }
         //   }
-        // }
+          '/api': {
+            target: 'http://localhost:9527',
+            pathRewrite: { '^/api': '' },
+          },
+        }
       }
     
 

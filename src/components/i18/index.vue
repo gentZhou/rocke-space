@@ -154,6 +154,7 @@ export default {
   },
   mounted() {
     // this.value=localStorage.lang;
+    // console.log('i18')
     this.options.forEach((item) => {
       if (item.value == localStorage.lang) {
         this.value = item.label;

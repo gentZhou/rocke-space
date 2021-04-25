@@ -71,7 +71,7 @@
                 slot="reference"
               ></i> </el-popover
           ></em>
-          <p><strong>20,000</strong>次</p>
+          <p><strong>{{total.toLocaleString()}}</strong>次</p>
         </div>
         <div class="whole" @click="toEquipment">
           <em>查看全部<i class="iconfont iconMOREsvg"></i></em>
@@ -127,7 +127,7 @@
       </div>
     </div>
     <div class="echarts-container">
-      <!-- <ul class="echarts-nav">
+      <ul class="echarts-nav">
         <li
           class="item"
           v-for="(chartItem, index) in chartList"
@@ -137,7 +137,8 @@
         >
           {{ chartItem }}
         </li>
-      </ul> -->
+      </ul>
+
 
       <div class="chart" ref="chart1Position">
         <h4>
@@ -293,9 +294,16 @@
             <el-table-column
               prop="amount1"
               sortable
-              label="机器数量(2,567)"
+              label="总设备数(2,567)"
               align="center"
-              width="180"
+            >
+            </el-table-column>
+
+            <el-table-column
+              prop="amount1"
+              sortable
+              label="代理设备数(2,567)"
+              align="center"
             >
             </el-table-column>
             <el-table-column
@@ -303,7 +311,6 @@
               sortable
               label="切膜总数(200,000)"
               align="center"
-              width="180"
             >
             </el-table-column>
             <el-table-column
@@ -311,7 +318,6 @@
               sortable
               label="日平均切膜数(200)"
               align="center"
-              width="180"
             >
             </el-table-column>
           </el-table>
@@ -393,6 +399,7 @@ export default {
           label: "华为-安慰省-代表处",
         },
       ],
+      total:20000,
       startTime: null,
       endTime: null,
       value: "全部类型",
@@ -1373,6 +1380,7 @@ export default {
       color: #bbb;
     }
     .left-data {
+      min-width:380px;
       width: calc(100% - 1180px);
       height: 180px;
       background-color: @logo;
@@ -1503,7 +1511,6 @@ export default {
     }
   }
   .echarts-container {
-    padding-top:20px;
     .echarts-nav {
       margin: 38px 0 30px 0;
       height: 35px;

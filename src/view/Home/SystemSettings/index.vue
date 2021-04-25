@@ -19,7 +19,7 @@
       <el-tab-pane
         label="个人信息设置"
         name="/home/systemsettings/informaticasettings"
-      >{{a}}</el-tab-pane>
+      ></el-tab-pane>
     </el-tabs>
     <router-view> </router-view>
   </div>
@@ -31,7 +31,6 @@ export default {
   props: {},
   data() {
     return {
-      a:'hahh'
     };
   },
   computed: {

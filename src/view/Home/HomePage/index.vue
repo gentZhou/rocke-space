@@ -1,7 +1,7 @@
 <template>
   <div class="statistics-container">
     <div class="statistics-content">
-      <div class="month item">
+      <div class="month item" @click="toDatastatistics">
         <h4>这个月切膜总数</h4>
         <span><em>2,000</em>次</span>
         <p class="describe top">
@@ -13,10 +13,10 @@
         <div class="Jump">
           <i class="iconfont icontongji"></i>
           <span>数据统计</span>
-          <em class="iconfont iconMOREsvg" @click="toDatastatistics"></em>
+          <em class="iconfont iconMOREsvg" ></em>
         </div>
       </div>
-      <div class="week item">
+      <div class="week item" @click="toEquipment">
         <h4>一周未工作设备</h4>
         <span><em>2,567</em>次</span>
         <p class="describe">
@@ -25,16 +25,16 @@
         <div class="Jump">
           <i class="iconfont iconshebei"></i>
           <span>设备管理</span>
-          <em class="iconfont iconMOREsvg" @click="toEquipment"></em>
+          <em class="iconfont iconMOREsvg" ></em>
         </div>
       </div>
-      <div class="total item">
+      <div class="total item" @click="toModeldata">
         <h4>机型数据</h4>
         <span><em>18,000</em>次</span>
         <div class="Jump">
           <i class="iconfont iconshuju"></i>
           <span>数据查询</span>
-          <em class="iconfont iconMOREsvg" @click="toModeldata"></em>
+          <em class="iconfont iconMOREsvg" ></em>
         </div>
       </div>
     </div>
@@ -82,6 +82,7 @@ export default {
       margin-bottom: 24px;
     }
     .item {
+      cursor: pointer;
       width: calc(33.33% - 14px);
       height: 100%;
       box-shadow: 5px 5px 10px #eee;
@@ -119,7 +120,6 @@ export default {
           line-height: 50px;
           text-align: center;
           border-radius: 50%;
-          cursor: pointer;
         }
       }
       span {

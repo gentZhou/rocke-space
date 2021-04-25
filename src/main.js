@@ -9,6 +9,10 @@ import '@/assets/font/iconfont.css';
 import * as echarts from "echarts";
 Vue.prototype.$echarts = echarts;
 
+
+// 富文本
+
+
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 // 使用rem适配
