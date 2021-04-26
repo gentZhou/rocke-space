@@ -230,7 +230,7 @@ export default {
 
 .ModelData-container {
   .top-data {
-    // width: 1603px;
+    min-width: 1500px;
     height: 190px;
     white-space: nowrap;
     .item {
@@ -242,6 +242,7 @@ export default {
     }
     .data1 {
       width: calc(100% - 1200px);
+      min-width:280px;
       position: relative;
       .left,
       .right {

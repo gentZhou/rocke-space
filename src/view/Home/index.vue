@@ -66,6 +66,18 @@
     <div class="right-container">
       <router-view></router-view>
     </div>
+    <div class="fixedBox">
+      <router-link
+        to="/home/serviceinformation/questions"
+        class="questions iconfont iconfaq"
+      ></router-link>
+      <div class="service iconCustomer-service iconfont"></div>
+      <div
+        class="toTop iconfont iconBack-to-top"
+        v-show="isToTop"
+        @click="toTop"
+      ></div>
+    </div>
   </div>
 </template>
 
@@ -77,6 +89,7 @@ export default {
       date: "",
       time: "",
       isCollapse: true,
+      isToTop:false,
     };
   },
   computed: {
@@ -102,6 +115,14 @@ export default {
     this.timer = setInterval(() => {
       this.getdate();
     }, 1000);
+    window.addEventListener('scroll', ()=>{
+      var dom = document.documentElement || document.body;
+      if(dom.scrollTop>=dom.clientHeight){
+        this.isToTop=true;
+      }else{
+        this.isToTop=false;
+      }
+    });
   },
   watch: {},
   methods: {
@@ -140,6 +161,9 @@ export default {
       }
       this.time = hour + ":" + minutes + ":" + second;
     },
+    toTop(){
+      window.scrollTo({top:0,left:0,behavior: "smooth"})
+    }
   },
   components: {},
 };
@@ -188,8 +212,8 @@ export default {
       color: #979797 !important;
       padding: 0 13px;
     }
-    .iconkehu{
-      font-size:24px;
+    .iconkehu {
+      font-size: 24px;
     }
     span {
       letter-spacing: 1px;
@@ -251,21 +275,45 @@ export default {
     padding-left: 240px;
     width: calc(100% - 280px);
   }
-
 }
-  .open {
-    .clock {
-      left: 150px;
-    }
-    .right-container {
-      padding-left: 150px;
-      width: calc(100% - 210px);
-    }
-    /deep/.statistics-container .echarts-container .bottom-container {
-      width: 1693px;
-      .left {
-        width: 1070px;
-      }
+.open {
+  .clock {
+    left: 150px;
+  }
+  .right-container {
+    padding-left: 150px;
+    width: calc(100% - 210px);
+  }
+  /deep/.statistics-container .echarts-container .bottom-container {
+    width: 1693px;
+    .left {
+      width: 1070px;
     }
   }
+}
+.fixedBox {
+  position: fixed;
+  right: 10px;
+  bottom: 100px;
+  background-color: white;
+  box-shadow: 0 0 10px #aaa;
+  border-radius: 30px;
+  a {
+    display: block;
+  }
+  .iconfont {
+    width: 40px;
+    height: 40px;
+    color: #666;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .iconfont:hover {
+    color: @logo;
+    background-color: white;
+    box-shadow: 0 0 5px #aaa;
+  }
+}
 </style>

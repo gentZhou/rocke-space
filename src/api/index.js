@@ -9,6 +9,17 @@ export const reqData = () => {
     })
 };
 
+export const upload = (formData) => {
+    return Ajax({
+        url: '/api/public/ueditor/php/controller.php?action=uploadfile',
+        method: 'post',
+        headers:{
+        },
+        data:{
+            upfile:formData,
+        }
+    })
+};
 
 // var mysql = require("mysql");
 // var connection = mysql.createConnection({
