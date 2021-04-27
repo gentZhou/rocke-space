@@ -15,7 +15,7 @@ import 'nprogress/nprogress.css'
 // import 'nprogress/nprogress.css' from 'nprogress/nprogress.css'
 //1
 const instance = axios.create({
-    // baseURL: '/api',     //配置请求基础路径
+    baseURL: '/api',     //配置请求基础路径
     timeout: 10000,//配置请求超时时间
 });
 

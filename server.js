@@ -9,7 +9,7 @@ http
       database: "zk_test",
       password: "hKSwCezpTfBy5pjn",
     });
-    // if (request.url == "/getTest") {
+    if (request.url == "/getTest") {
       connection.connect();
       connection.query("select * from test", function(err, result) {
         if (err) {
@@ -20,8 +20,8 @@ http
           response.end(JSON.stringify(result));
         }
       });
-    // }
-    postTest()
+    }
+    // postTest()
     
   })
   .listen(9527);

@@ -116,13 +116,15 @@ export default {
     box-shadow: @shadow;
     margin-top: 20px;
     min-height: 740px;
-    min-width:1693px;
+    min-width:1600px;
     .common-problem {
       padding: 70px 40px 40px;
       white-space: nowrap;
+      text-align: center;
       .problem-item {
         display: inline-block;
-        width: 364px;
+        width: 22%;
+        min-width: 350px;
         height: 160px;
         line-height: 160px;
         text-align: center;
@@ -148,7 +150,7 @@ export default {
         }
       }
       .description-item + .description-item {
-        margin-left: 230px;
+        margin-left: 220px;
       }
     }
     .service-support {

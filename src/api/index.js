@@ -11,10 +11,8 @@ export const reqData = () => {
 
 export const upload = (formData) => {
     return Ajax({
-        url: '/api/public/ueditor/php/controller.php?action=uploadfile',
-        method: 'post',
-        headers:{
-        },
+        url: '/public/ueditor/php/controller.php?action=uploadfile',
+        method: 'POST',
         data:{
             upfile:formData,
         }

@@ -606,16 +606,7 @@ export default {
       }
       return m;
     }
-    const top = this.$refs.topChoice.offsetTop;
-    window.addEventListener("scroll", () => {
-      if (this.$refs.topChoice.getBoundingClientRect) {
-        if (document.documentElement.scrollTop > top) {
-          this.choiceFixed = true;
-        } else {
-          this.choiceFixed = false;
-        }
-      }
-    });
+    window.addEventListener("scroll", this.handleScroll);
   },
   watch: {},
   methods: {
@@ -1254,6 +1245,16 @@ export default {
         // this.myChart3.resize();
       });
     },
+    handleScroll(){
+    const top = this.$refs.topChoice.offsetTop;
+      if (this.$refs.topChoice.getBoundingClientRect) {
+        if (document.documentElement.scrollTop > top) {
+          this.choiceFixed = true;
+        } else {
+          this.choiceFixed = false;
+        }
+      }
+    },
     toEquipment() {
       this.$router.push({ path: "/home/equipment" });
     },
@@ -1273,6 +1274,10 @@ export default {
   components: {
     RankingChart,
   },
+  beforeDestroy(){
+    window.removeEventListener("scroll", this.handleScroll);
+
+  }
 };
 </script>
 

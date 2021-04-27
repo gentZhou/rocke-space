@@ -14,7 +14,6 @@ module.exports = {
   },
   devServer: {
     open: true,
-    // proxy: "http://segmenth50422.utools.club",
     proxy: {
       //   "/api": {
       //     // target: "http://flash.weather.com.cn/wmaps/xml/shenzhen.xml",
@@ -26,7 +25,7 @@ module.exports = {
       //     }
       // }
       "/api": {
-        target: "http://localhost.vr186.com",
+        target: "http://192.168.1.201.vr186.com",
         changeOrigin: true,
 
         pathRewrite: { "^/api": "" },
